@@ -2,28 +2,43 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Demo</title>
+  <title>SBPRS</title>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
+<h1>Sentiment Based Product Recommender System</h1>
+<div class='container'>
  <div class="login">
-  <h1>IRIS Flower Prediction</h1>
-  <img src="https://miro.medium.com/max/1000/1*nfK3vGZkTa4GrO7yWpcS-Q.png" width ="500">
+  <img src="https://miro.medium.com/max/1400/1*3UGs7nKDZk9PIZpxtkIGsQ.png" width ="500">
 	
      <!-- Define a form to take input from user -->
         <form action="{{ url_for('predict')}}" method="post">
-        <label for="Username">Username</label>
+        <label for="Username"><b>Enter Username</b></label>
         <input type="text" name="Username" required="required" />
-        <button type="submit">Predict</button>
+        <button type="submit">Recommend</button>
     </form>
-
-   <br>
-   <H2>
-   {{ OUTPUT }}
- </H2>
  </div>
 
+<br>
+<br>
+</div>
 
+<div class='container'>
+<p style="color:red"><b>{{ OUTPUT }}</b></p>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
+<br>
+<br>
+
+<div class=page>
+  {% for table in tables %}
+    <h1>Top 5 Recommendations of Products</h1>
+    <h2>{{titles[loop.index]}}</h2>
+    {{ table|safe }}
+  {% endfor %}
+</div>
+
+</div>
 </body>
 </html>
