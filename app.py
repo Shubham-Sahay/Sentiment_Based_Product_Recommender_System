@@ -36,13 +36,13 @@ def predict():
 
 # Defining function to output all usernames avaiable in our Recommeder System Engine on the webpage
 # It renders updated availableUsernames.html
-@app.route('/usernames',methods=['POST'])
-def predict():
+@app.route('/usernames')
+def availableUsernames():
     # Loading Recommender System
     RecommenderSystem = pickle.load(open('Pickle/RecommenderSystem.pkl', 'rb'))
 
     # Fetching available usernames
-    availableUsernameList = list(RecommenderSystem.username)
+    availableUsernameList = list(RecommenderSystem.index)
 
     # Creating dataframe of available usernames
     usernamesDF = pd.DataFrame(availableUsernameList, columns=['Available Usernames'])
@@ -51,4 +51,4 @@ def predict():
 
 # Defining the starting point of our application
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
