@@ -19,10 +19,10 @@
         <button type="submit">Recommend</button>
     </form>
  </div>
+</div>
 
 <br>
 <br>
-</div>
 
 <div class='container'>
 <p style="color:red"><b>{{ OUTPUT }}</b></p>
@@ -35,6 +35,9 @@
   {% for table in tables %}
     <h1>Top 5 Recommendations of Products</h1>
     <h2>{{titles[loop.index]}}</h2>
+
+    <br>
+    <br>
     {{ table|safe }}
   {% endfor %}
 </div>

@@ -28,6 +28,11 @@ h1 {
     color: beige;
 }
 
+.availableUsernames th {
+  background-color: darkcyan;
+  color: beige;
+}
+
 tr:nth-child(odd)		{ background-color:#eee; }
 tr:nth-child(even)	{ background-color:#fff; }
 
