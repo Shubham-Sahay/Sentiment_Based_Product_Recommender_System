@@ -29,7 +29,8 @@ def predict():
     prediction = model.getOptimizedRecommendations(Username)
     if type(prediction)==list:
         predictionDF = pd.DataFrame(prediction, columns=['Recommended Products'])
-        return render_template('index.html', tables=[predictionDF.to_html(classes='Recommendations')], titles = ['For Username : '+ Username])
+        return render_template('index.html', tables=[predictionDF.to_html(classes='Recommendations')],
+         titles = ['NAN', 'For Username : '+ str(Username)])
     else:
         return render_template('index.html', OUTPUT=prediction)
 

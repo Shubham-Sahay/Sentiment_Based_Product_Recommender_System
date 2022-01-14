@@ -17,7 +17,8 @@
         <label for="Username"><b>Enter Username</b></label>
         <input type="text" name="Username" required="required" />
         <button type="submit">Recommend</button>
-    </form>
+        &nbsp;
+        <a href="/usernames" target="_blank">Available Usernames</a>
  </div>
 </div>
 
@@ -34,9 +35,8 @@
 <div class=page>
   {% for table in tables %}
     <h1>Top 5 Recommendations of Products</h1>
-    <h2>{{titles[loop.index]}}</h2>
+    <h3 style="color: black;">{{titles[loop.index]}}</h3>
 
-    <br>
     <br>
     {{ table|safe }}
   {% endfor %}
