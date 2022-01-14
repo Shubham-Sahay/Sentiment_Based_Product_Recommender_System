@@ -36,4 +36,4 @@ def predict():
 
 # Defining the starting point of our application
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
