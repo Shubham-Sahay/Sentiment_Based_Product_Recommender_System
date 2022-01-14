@@ -8,6 +8,7 @@ import warnings
 warnings.filterwarnings("ignore")
 import pandas as pd
 import model
+import pickle
 
 # Initializing Flask Application
 app = Flask(__name__)
