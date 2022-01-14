@@ -21,3 +21,4 @@ sklearn==0.0
 threadpoolctl==3.0.0
 wcwidth==0.2.5
 Werkzeug==2.0.2
+gunicorn==20.1.0
